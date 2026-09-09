@@ -27,3 +27,4 @@ def test_division():
 
 def test_division_by_zero():
     assert my_calculator.division(10, 0).startswith("Erreur")
+    assert "division par zéro" in my_calculator.division(10, 0)
