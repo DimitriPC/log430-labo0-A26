@@ -1,0 +1,77 @@
+Question 1 : Si l'un des tests échoue à cause d'un bug, comment pytest signale-t-il l'erreur et aide-t-il à la localiser ? 
+Rédigez un test qui provoque volontairement une erreur, puis montrez la sortie du terminal obtenue.
+
+Pytest nous donne la ligne à laquelle il y a eu une erreur, nous montre la fonction et nous indique où le test se situe dans la séquence.
+
+Sortie:
+test_calculator.py ......F                                                                                                                                                                                          [100%]
+
+======================================================================================================== FAILURES ========================================================================================================
+_______________________________________________________________________________________________________ test_error _______________________________________________________________________________________________________
+
+    def test_error():
+>       assert my_calculator.division(10, 0) == 0
+E       AssertionError: assert 'Erreur : division par zéro' == 0
+E        +  where 'Erreur : division par zéro' = division(10, 0)
+E        +    where division = <calculator.Calculator object at 0x0000020E534C7B60>.division
+
+test_calculator.py:33: AssertionError
+================================================================================================ short test summary info =================================================================================================
+FAILED test_calculator.py::test_error - AssertionError: assert 'Erreur : division par zéro' == 0
+============================================================================================== 1 failed, 6 passed in 0.06s ===============================================================================================
+
+
+Question 2 : Que fait GitHub pendant les étapes de « setup » et « checkout » ? 
+Veuillez inclure la sortie du terminal GitHub CI dans votre réponse.
+
+Setup installe l'environnement Python et checkout rend le code source dispobible à 
+Github Actions
+
+Current runner version: '2.337.0'
+
+Runner Image Provisioner
+Operating System
+Runner Image
+GITHUB_TOKEN Permissions
+Secret source: Actions
+Prepare workflow directory
+Prepare all required actions
+Getting action download info
+Download action repository 'actions/checkout@v4'
+(SHA:11d5960a326750d5838078e36cf38b85af677262)
+Download action repository 'actions/setup-python@v5'
+(SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Complete job name: build
+
+
+Run actions/checkout@v4
+Syncing repository: DimitriPC/log430-labo0-A26
+Getting Git version info
+Temporarily overriding HOME='/home/runner/work/_temp/2a739cd9-c025-4cc3-8c6b-ca39f107f7b9'
+before making global git config changes
+Adding repository directory to the temporary git global config as a safe directory
+/usr/bin/git config --global --add safe.directory /home/runner/work/log430-labo0-
+A26/log430-labo0-A26
+Deleting the contents of '/home/runner/work/log430-labo0-A26/log430-labo0-A26'
+Initializing the repository
+Disabling automatic garbage collection
+Setting up auth
+Fetching the repository
+Determining the checkout info
+/usr/bin/git sparse-checkout disable
+/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Checking out the ref
+/usr/bin/git log -1 --format=%H
+9ce38442f98d38dba7dd4b75511eeb656fb590aa
+
+ 
+
+Question 3 : Quel type d'informations pouvez-vous obtenir via les commandes docker stats et top ? 
+Veuillez donner quelques exemples et expliquer la différence entre ce que chacune vous montre. 
+Veuillez inclure la sortie du terminal dans votre réponse.
+
+Docker stats
+CONTAINER ID   NAME                            CPU %     MEM USAGE / LIMIT     MEM %     NET I/O         BLOCK I/O        PIDS 
+a60df6adf78c   log430-labo0-a26-calculator-1   0.00%     6.074MiB / 15.48GiB   0.04%     1.88kB / 126B   1.1MB / 12.3kB   1 
+
+top ?? not working
