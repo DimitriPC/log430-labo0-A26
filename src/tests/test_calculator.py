@@ -23,7 +23,7 @@ def test_multiplication():
     assert my_calculator.multiplication(2, 4) == 8
 
 def test_division():
-    assert my_calculator.division(10, 5) == 2
+    assert my_calculator.division(15, 5) == 3
 
 def test_division_by_zero():
     assert my_calculator.division(10, 0).startswith("Erreur")
